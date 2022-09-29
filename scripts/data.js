@@ -9,7 +9,7 @@ export const readLS = () => {
 		const items2 = (JSON.parse(localStorage.getItem("archivedData"))).items;
 		return [items1, items2];
 	}catch(e){
-		console.log(e);
+		//console.log(e);
 		return [[],[]];
 	}
 }

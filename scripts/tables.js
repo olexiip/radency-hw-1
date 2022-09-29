@@ -91,6 +91,13 @@ const createArchBtn = () => {
 	//btn.onclick = {someFincton};
 	return btn;
 }
+const createUnArchBtn = () => {
+	const btn = document.createElement("button");
+	btn.className = "unarchive-btn optBtn";
+	btn.textContent = "unarc";
+	//btn.onclick = {someFincton};
+	return btn;
+}
 
 export const refreshTable = (myDataStorage, myDataStorageArchived) => {
 	console.log("refreshTable")
@@ -108,7 +115,7 @@ export const refreshTable = (myDataStorage, myDataStorageArchived) => {
 		dataTable.appendChild(element);
 	})
 	myDataStorageArchived.items.forEach(function(item){
-		const btns = [createDelBtn()];
+		const btns = [createUnArchBtn(), createDelBtn()];
 		const rowOfBtns =  composeRowofBtns(btns);
 		const element = composeRow(item, rowOfBtns)
 		archDataTable.appendChild(element);

@@ -133,6 +133,32 @@
 		
 	}
 
+	const unarchF = (e) => {
+		console.log("unarchF"); 
+		//console.log(e); 
+		//console.log(e.path[3]);
+		//console.log(e.path[3].customID);
+		//console.log(myDataStorage)
+
+		myDataStorageArchived.items.find(function(item, index) {
+			if (item.id === e.path[3].customID) {
+				const deletedItem = myDataStorageArchived.items.splice(index,1);
+				console.log(deletedItem);
+				//myDataStorageArchived
+				myDataStorage.items.push(deletedItem[0])
+				console.log(myDataStorageArchived);
+				localStorage.setItem("data", JSON.stringify(myDataStorage));
+				localStorage.setItem("archivedData", JSON.stringify(myDataStorageArchived));
+				refreshTable(myDataStorage, myDataStorageArchived);
+				setEvents();
+				return [];
+			};	
+			
+		})
+
+		
+	}
+
 	const delFArch = (e) => {
 		console.log("delFArch"); 
 		//console.log(e); 
@@ -167,11 +193,13 @@
 		const delBtnQSel = ".main-table>tr>th>div>.delete-btn"; // del btn 
 		const editBtnQSel = ".main-table>tr>th>div>.edit-btn"; // edit btn 
 		const archBtnQSel = ".main-table>tr>th>div>.archive-btn"; // edit btn 
-		const delBtnQSelArchive = ".arch-table>tr>th>div>.delete-btn"; // del btn archived table
+		const delBtnQSelArchive = ".arch-table>tr>th>div>.delete-btn";
+		const unarchBtnQSel = ".arch-table>tr>th>div>.unarchive-btn"; // del btn archived table
 		setItemListeneres(delBtnQSel, delF);
 		setItemListeneres(editBtnQSel, editF);
 		setItemListeneres(archBtnQSel, archF);
 		setItemListeneres(delBtnQSelArchive, delFArch);
+		setItemListeneres(unarchBtnQSel, unarchF);
 	}
 
 	setEvents();
