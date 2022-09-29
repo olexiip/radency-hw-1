@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="styles/styles.css" />
+	
+</head>
+<body>
+	<button class="addBtn">add new</button>
+	<button class="resetBtn">reset </button>
+	
+	<div> 
+		<table class="main-table">
+			<thead>
+					<th>name</th>
+					<th>Created</th>
+					<th>Category</th>
+					<th>Content</th>
+					<th>Dates</th>
+					<th>buttons</th>
+			</thead>
+
+		</table>
+	</div>
+	<hr>
+	<div> 
+		<table class="arch-table">
+			<thead>
+				<tr>
+					<th>name</th>
+					<th>Created</th>
+					<th>Category</th>
+					<th>Content</th>
+					<th>Dates</th>
+					<th>buttons</th>
+				</tr>
+			</thead>
+
+		</table>
+	</div>
+
+
+
+
+	<div class="form-background"></div>
+
+	<div class="form-popup" id="myForm">
+		<form class="form-container-add form-common-styles">
+			<h3>add item</h3>
+		  <label for="itemName"><b>Name</b></label>
+		  <input type="text" placeholder="type itemName" id="itemName">
+		  <br>
+		  <label for="itemCategory"><b>Category</b></label>
+		  <br>
+		  <select id="itemCategory"></select>
+		  <br>
+		  <label for="Content"><b>Content</b></label>
+		  <input type="text" placeholder="Content" id="itemContent" >
+
+		  <label for="date"><b>Dates</b></label>
+		  <input type="text" placeholder="date" id="itemDate" >
+	  
+		  <button type="submit" class="btn" disabled>Create</button>
+		  <button type="button" class="btn cancel">Close (Esc)</button>
+		</form>
+	  </div>
+
+	  <div class="form-popup" id="myForm">
+		<form class="form-container-edit form-common-styles">
+			<h3>edit item</h3>
+		  <label for="itemName"><b>Name</b></label>
+		  <input type="text" placeholder="type itemName" id="itemName">
+		  <br>
+		  <label for="itemCategory"><b>Category</b></label>
+		  <br>
+		  <select id="itemCategory"></select>
+		  <br>
+		  <label for="Content"><b>Content</b></label>
+		  <input type="text" placeholder="Content" id="itemContent" >
+
+		  <label for="date"><b>Dates</b></label>
+		  <input type="text" placeholder="dates" id="itemDate" >
+	  
+		  <button type="submit" class="btn" disabled>save changes</button>
+		  <button type="button" class="btn cancel">Close (Esc)</button>
+		</form>
+	  </div>
+
+
+
+
+	  <script type="module" src="scripts/main.js"></script>
+	
+</body>
+</html>
