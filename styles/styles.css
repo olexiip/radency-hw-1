@@ -1,0 +1,125 @@
+body {
+	background-color: rgb(145, 145, 145);
+}
+
+
+/*{box-sizing: border-box;}*/
+
+/* Кнопка для открытия формы – зафиксирована внизу страницы */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* Всплывающая форма – по умолчанию скрыта */
+.form-background {
+  display: none;
+  /*background-color: rgba(0, 0, 0, 0.15);*/
+  backdrop-filter: blur(5px);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 10;
+}
+.form-popup {
+  display: block;
+  z-index: 9;
+}
+/*
+.form-popup {
+  display: none;
+  z-index: 9;
+}
+*/
+
+
+/* Стили контейнера формы */
+.form-common-styles {
+  display: none;
+  max-width: 300px;
+  position: fixed;
+  border: 3px solid #7a7a7a;
+  left: 20px;
+  right: 20px;
+  top: 20px;
+  padding: 10px;
+  background-color: white;
+  z-index: 100;
+}
+
+/* Поля ввода во всю ширину */
+.form-common-styles input {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+select {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	border: none;
+	background: #f1f1f1;	
+}
+
+/* Когда поля ввода получают фокус, кое что сделаем */
+.form-common-styles input[type=text]:focus, .form-common-styles input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Стили для кнопки входа */
+.form-common-styles .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Добавим красный фон для кнопки "Закрыть" */
+.form-common-styles .cancel {
+  background-color: red;
+}
+
+/* Добавим эффекты при наведении на кнопки */
+.form-common-styles .btn:enabled:hover, .open-button:hover {
+  opacity: 1;
+}
+.btn:disabled {
+  background-color: #4d4d4d;
+}
+
+table {
+  background-color: #04AA6D;
+  font-size: 12px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+thead {
+  background-color: aqua;
+}
+tr, th, .optBtn { 
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+.optBtn {
+  display: inline-block;
+}
